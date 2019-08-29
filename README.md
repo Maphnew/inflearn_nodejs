@@ -63,3 +63,10 @@ NodeJS_Begin
 12. res.json(responseData)
 
 ### Assignment
+DONE!
+https://github.com/Maphnew/nodeJS_Assignment01.git
+
+* 2019.08.29(THU)
+
+
+## Section 3. Database connection!
