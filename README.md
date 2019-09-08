@@ -96,3 +96,14 @@ https://github.com/Maphnew/nodeJS_Assignment01.git
 ## Section 4. Router Modulization
 
 ### Routing modulization
+1. mkdir router and make main.js
+2. mv to main.js app.get('/main', (req,res) => {})
+3. import express, app, router into main.js
+4. app.get('/main') --> router.get('/')
+5. module.exports = router;
+6. path.join thing
+7. app.js const main = require("./router/main")
+    app.use('/main', main)
+
+### Routing modulization 2 (DataBase)
+1.

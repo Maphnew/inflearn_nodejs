@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const mysql = require('mysql')
+const main = require('./router/main')
 
 const connection = mysql.createConnection({
     host    : 'localhost',
@@ -21,15 +22,13 @@ app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.set('view engine', 'ejs')
+app.use('/main', main)
 
 // url routing
 app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/main.html")
 })
 
-app.get('/main', (req, res) => {
-    res.sendFile(__dirname + "/public/main.html")
-})
 
 app.post('/email_post', (req, res) => {
     console.log(req.body.email)
