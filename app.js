@@ -1,6 +1,19 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const mysql = require('mysql')
+
+const connection = mysql.createConnection({
+    host    : 'localhost',
+    post    : '3306',
+    user    : 'maphnew',
+    password: '12345678',
+    database: 'jsman'
+});
+
+connection.connect();
+
+connection.end();
 
 app.listen(3000, () => {
     console.log("Start! express! http://localhost:3000 <<<<<< ctrl + click")

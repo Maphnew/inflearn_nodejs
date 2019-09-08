@@ -70,3 +70,21 @@ https://github.com/Maphnew/nodeJS_Assignment01.git
 
 
 ## Section 3. Database connection!
+### Set Mysql 
+1. sudo apt-get install mysql-server
+2. sudo mysql_secure_installation
+3. mysql -u - root -p
+4. create database jsman;
+5. use jsman;
+6. create table user(email VARCHAR(32) NOT NULL, name VARCHAR(32) NOT NULL, password VARCHAR(32) NOT NULL);
+7. insert into (email, name, password) values (ksc@ksc@.com, ksc, 1234);
+    create usr 'maphnew'@;localhost' identified by '12345678';
+    grant all privileges on *.* to 'maphnew'@'localhost';
+8. npm install mysql --save
+9. const mysql = require('mysql')
+10. search 'express mysql' and type connection thing on app.js with 'maphnew' infomation
+11. check nodemon 
+12. 
+
+### Run Mysql
+1. 
