@@ -13,8 +13,6 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
-connection.end();
-
 app.listen(3000, () => {
     console.log("Start! express! http://localhost:3000 <<<<<< ctrl + click")
 });
@@ -40,7 +38,24 @@ app.post('/email_post', (req, res) => {
 }) 
 
 app.post('/ajax_send_email', (req,res) => {
-    console.log(req.body.email)
-    const responseData = {'result':'ok', 'email': req.body.email}
-    res.json(responseData);
+    const email = req.body.email;
+    const responseData = {};
+
+    const query = connection.query(`select name from user where email="${email}"`, (err,rows) => {
+        if(err) throw err;
+        if(rows[0]) {
+            // console.log(rows[0].name)
+            responseData.result="ok";
+            responseData.name=rows[0].name;
+
+        }else{
+            // console.log(`none :  ${rows[0]}`)
+            responseData.result="none";
+            responseData.name="";
+
+        }
+        res.json(responseData);
+    })
+    // const responseData = {'result':'ok', 'email': req.body.email}
+    
 })

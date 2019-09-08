@@ -87,4 +87,12 @@ https://github.com/Maphnew/nodeJS_Assignment01.git
 12. 
 
 ### Run Mysql
-1. 
+1. app.post('/ajax_send_email', (req, res) => {
+    SET error, exist row[0], email, responseData, query connection, result, name from email, res.json(responseData) 
+})
+
+2. check rows[0], rows[0].name, if exist rows[0] response name from browser
+
+## Section 4. Router Modulization
+
+### Routing modulization
